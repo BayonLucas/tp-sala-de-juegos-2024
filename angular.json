@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,6 +97,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "tp-sala-de-juegos-2024:build:production",
+              "serveTarget": "tp-sala-de-juegos-2024:serve:production"
+            },
+            "development": {
+              "buildTarget": "tp-sala-de-juegos-2024:build:development",
+              "serveTarget": "tp-sala-de-juegos-2024:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

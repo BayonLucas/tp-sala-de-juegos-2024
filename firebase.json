@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "tp-sala-de-juegos-2024",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}
