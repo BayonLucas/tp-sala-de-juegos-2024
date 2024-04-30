@@ -1,7 +1,7 @@
-import { ParseSourceFile } from '@angular/compiler';
-import { Injectable, inject } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile, user, User } from '@angular/fire/auth';
+import { Injectable, inject, signal } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile, user, User, authState } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
+import { UserInterface } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +9,17 @@ import { Observable, from } from 'rxjs';
 export class AuthService {
   private auth = inject(Auth);
   user$ = user(this.auth);
+  userState$ = authState(this.auth);
 
+  currentUser = signal<UserInterface | null | undefined>(undefined)
   
   async registerUser(email: string, username: string, password: string){
     await createUserWithEmailAndPassword(this.auth, email, password)
       .then( response => 
-        updateProfile(response.user, {displayName: username}),
-      );
-
-
+        updateProfile(response.user, {displayName: username})
+      ).catch(e =>{
+        throw e;
+      });
   }
 
   async loginUser(email: string, password: string){
@@ -32,9 +34,9 @@ export class AuthService {
     return await signOut(this.auth);
   }
 
-  // async getProfile(){
-  //   return await 
-  // }
+  getUserLogged() {
+    return this.userState$;
+  }
 
 
 

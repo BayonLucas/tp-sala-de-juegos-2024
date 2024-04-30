@@ -1,42 +1,18 @@
-<!-- <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <p class="navbar-brand" href="#" *ngIf="userEmail | async as usuarioLogueado"
-            (click)="handleVerificarUsuario()">
-            {{ usuarioLogueado.email }}
-        </p>
-        <p class="navbar-brand" href="#">Sala de juegos</p>
-        <div >
-            <button class="botonHover">Cerrar Sesión</button>
-            <button class="botonHover">Atrás</button>
-        </div>
-
-        <ng-template #then_content>
-            <div class="Acceso">
-                <button class="botonHover" type="submit" routerLink="/login">
-                    Login
-                </button>
-                <button class="botonHover" type="submit" routerLink="/singup">
-                    Registro
-                </button>
-            </div>
-        </ng-template>
-    </div>
-</nav> -->
 <nav class="navbar bg-body-tertiary border-bottom border-body" data-bs-theme="dark">
     <div class="container-fluid">
         <div>
             <img class="px-3" src="../../../assets/icons/ghost.png" alt="">
-            <a class="navbar-brand">{{userEmail}}</a>
+            <a class="navbar-brand">{{this.authenticator.currentUser()?.email}}</a>
         </div>
-        <p class="navbar-brand">Bienvenido - Sala de Juegos!</p>
-        <form class="d-flex" role="search">
-            @if(userEmail){
-                <button class="btn btn-outline-primary" type="submit" [routerLink]="['/login']" >Inicia Sesión</button>
-                <button class="btn btn-outline-secondary" type="submit" [routerLink]="['/singup']">Registrate</button>
+        <h1 class="navbar-brand fs-1">Bienvenido {{this.authenticator.currentUser()?.nombrecompleto}} - Sala de Juegos!</h1>
+        <div class="d-flex" role="search">
+            @if(!this.authenticator.currentUser()){
+                <button class="btn btn-outline-info px-5 me-2" type="button" [routerLink]="['/login']" > Inicia Sesión </button>
+                <button class="btn btn-outline-light px-5 ms-2" type="button" [routerLink]="['/singup']"> Registrate </button>
             }
             @else{
-                <button class="btn btn-outline-primary" type="submit" [routerLink]="['/home']" >Cerrar Sesión</button>
+                <button class="btn btn-outline-primary px-5 mx-2" type="button" (click)="CerrarSesion()" > Cerrar Sesión </button>
             }
-        </form> 
+        </div> 
     </div> 
 </nav>
