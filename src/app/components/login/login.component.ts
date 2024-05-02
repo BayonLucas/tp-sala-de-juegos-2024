@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit{
   fStore = inject(StoreService);
   form!: FormGroup;
   errorMessage: string | null = null;
+  success: boolean = false;
   
   IniciarSesion(){
     const data = this.form.getRawValue();
