@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { CollectionReference, Firestore, collection, addDoc, collectionData, query, collectionGroup, orderBy } from '@angular/fire/firestore';
+import { CollectionReference, Firestore, collection, addDoc, collectionData, query, collectionGroup, orderBy, getDoc, getDocs } from '@angular/fire/firestore';
 import { LogsInterface } from '../models/logs';
 import { MensajeModel } from '../models/mensaje';
-import { Observable} from 'rxjs';
+import { Observable, from} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class StoreService {
         });
     }
   }
-  saveMessages(message: MensajeModel){
+  guardarMensajes(message: MensajeModel){
     if(message){
       addDoc(this.msjColection, message)
         .then((res) => {
@@ -44,8 +44,9 @@ export class StoreService {
     }
   }
 
-  loadMessages(): Observable<MensajeModel[]> {
-    return collectionData(this.msjColection) as Observable<MensajeModel[]>;
+  cargarMensajes(): Observable<MensajeModel[]> {
+    const qry = query(this.msjColection, orderBy('date', 'asc'));
+    return collectionData(qry) as Observable<MensajeModel[]>;
   }
   
 }

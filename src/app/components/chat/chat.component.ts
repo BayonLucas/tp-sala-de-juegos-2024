@@ -35,7 +35,7 @@ export class ChatComponent implements OnInit {
       user => {
         this.userIsLogged = user;
         this.userName = user?.displayName;
-        this.messages$ = this.store.loadMessages();
+        this.messages$ = this.store.cargarMensajes();
         
         this.messages$.subscribe(
           (messages: MensajeModel[]) => {
@@ -51,7 +51,7 @@ export class ChatComponent implements OnInit {
     });
   } 
   
-    sendMessage(): void {
+    enviarMensajes(): void {
       const now = new Date();
       const messageNew: MensajeModel = {
         uid: this.userIsLogged.uid,
@@ -60,7 +60,7 @@ export class ChatComponent implements OnInit {
         date: now.toLocaleString(),
       };
     
-      this.store.saveMessages(messageNew);
+      this.store.guardarMensajes(messageNew);
       this.messages.push(messageNew);
     
       setTimeout(() => {
