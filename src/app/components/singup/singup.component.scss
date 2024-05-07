@@ -1,74 +1,175 @@
+// form {
+//   background:#111; 
+//  width:500px;
+//  margin:30px auto;
+//  border-radius:0.4em;
+//  border:1px solid #191919;
+//  overflow:hidden;
+//  position:relative;
+//  box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+// }
 
-form {
-  background:#111; 
- width:500px;
- margin:30px auto;
- border-radius:0.4em;
- border:1px solid #191919;
- overflow:hidden;
- position:relative;
- box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+// .inset {
+//   padding:20px; 
+//  border-top:1px solid #19191a;
+// }
+
+
+// label {
+//   color:#666;
+//  display:block;
+//  padding-bottom:9px;
+// }
+
+// input[type=text],
+// input[type=password] {
+//   width:100%;
+//  padding:8px 5px;
+//  border:1px solid #222;
+//  box-shadow:
+//    0 1px 0 rgba(255,255,255,0.1);
+//  border-radius:0.3em;
+//  margin-bottom:20px;
+// }
+
+// label[for=remember]{
+//   color:white;
+//  display:inline-block;
+//  padding-bottom:0;
+//  padding-top:5px;
+// }
+
+// .p-container {
+//   padding:0 20px 20px 20px; 
+// }
+
+// .p-container:after {
+//   clear:both;
+//  display:table;
+//  content:"";
+// }
+
+// .p-container span {
+//  display:block;
+//  float:left;
+//  color:#0d93ff;
+//  padding-top:8px;
+// }
+
+// input[type=submit] {
+//   padding:5px 20px;
+//  border:1px solid rgba(0,0,0,0.4);
+//  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+//  box-shadow:
+//    inset 0 1px 0 rgba(255,255,255,0.3),
+//    inset 0 10px 10px rgba(255,255,255,0.1);
+//  border-radius:0.3em;
+//  background:#0184ff;
+//  color:white;
+//  float:right;
+//  font-weight:bold;
+//  cursor:pointer;
+//  font-size:13px;
+// }
+
+
+.singup{
+  width: 60%;
+  height: 60%;
+  margin-top: 8%;
+  border-radius: 30px;
+  padding: 0 20px 20px 0!important;
+  border: 1px solid rgb(247, 0, 255);
+  background: transparent;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.inset {
-  padding:20px; 
- border-top:1px solid #19191a;
+.extremos{
+  img{
+    // border-radius: 500px;
+    // padding: 10px;
+    mix-blend-mode: multiply;
+    padding: 0;
+    margin: 0;
+    height: 100% !important;
+    width: 100% !important;
+  }
 }
 
 
-label {
-  color:#666;
- display:block;
- padding-bottom:9px;
+.col_form{
+  padding: 50px;
+  // width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bolder;
+    font-size: 60px;
+    color: azure;
+    text-shadow: 0px 0px 10px rgb(238, 0, 255);
+  }
+  div{
+    padding: 10px;
+  }
+  label{
+    color: azure;
+    text-transform:capitalize;
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 5px;
+    padding-left: 20px;
+  }
+  input{
+    background: rgba(255, 255, 255, 0.3);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px;
+    padding: 0px 20px;
+    border: none;
+    // margin-bottom: 30px;
+    color: white;
+  }
+  span{
+    color: aqua;
+    display: contents;
+  }
+  button{
+    border-radius: 40px;
+    margin-top: 30px;
+    color: white;
+  }
+
+}
+.span-link{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.span-link:hover{
+  color: rgb(6, 141, 182)!important;
+  text-decoration: none;
+
 }
 
-input[type=text],
-input[type=password] {
-  width:100%;
- padding:8px 5px;
- border:1px solid #222;
- box-shadow:
-   0 1px 0 rgba(255,255,255,0.1);
- border-radius:0.3em;
- margin-bottom:20px;
-}
+// @keyframes girar {
+//   0% { transform: rotate(0deg); }
+//   100% { transform: rotate(360deg); }
+// }
 
-label[for=remember]{
-  color:white;
- display:inline-block;
- padding-bottom:0;
- padding-top:5px;
-}
+// @keyframes cambiarColor {
+//   0% { border-color: red; }
+//   25% { border-color: yellow; }
+//   50% { border-color: blue; }
+//   75% { border-color: green; }
+//   100% { border-color: red; }
+// }
+// animation: girar 5s linear infinite, cambiarColor 4s linear infinite;
 
-.p-container {
-  padding:0 20px 20px 20px; 
-}
-
-.p-container:after {
-  clear:both;
- display:table;
- content:"";
-}
-
-.p-container span {
- display:block;
- float:left;
- color:#0d93ff;
- padding-top:8px;
-}
-
-input[type=submit] {
-  padding:5px 20px;
- border:1px solid rgba(0,0,0,0.4);
- text-shadow:0 -1px 0 rgba(0,0,0,0.4);
- box-shadow:
-   inset 0 1px 0 rgba(255,255,255,0.3),
-   inset 0 10px 10px rgba(255,255,255,0.1);
- border-radius:0.3em;
- background:#0184ff;
- color:white;
- float:right;
- font-weight:bold;
- cursor:pointer;
- font-size:13px;
-}

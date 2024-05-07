@@ -1,0 +1,30 @@
+<div *ngIf="userIsLogged && !showChat" class="chat-icon-container" (click)="showChat=true">
+    <img class="icon-button" src="../../../assets/chat/chat.png" >
+  </div>
+  
+  <div class="card text-center cardContainer" *ngIf="userIsLogged && showChat">
+    <div class="card-header">
+        CHAT
+        <button type="button" class="btn-close" aria-label="Close" (click)="showChat=false"></button>
+    </div>
+    <div  class="card-body" id="card-body">
+      <div id="container-messages" class="container-messages h-100">
+        <p id="msg" *ngFor="let message of messages" class="p-2 mb-2 msg" [ngClass]="determineMessageClass(message)">
+          <span class="user-name">{{message.user}}</span>
+          <br>
+          <span class="text">{{message.text}}</span>
+          <br>
+          <span class="user-date">{{message.date}}</span>
+        </p>
+      </div>
+      <span id="final"></span>
+    </div>
+    <form class="card-footer text-muted input-group" (ngSubmit)="sendMessage()">
+      <input type="text" class="form-control" placeholder="Ingresa tu mensaje" [(ngModel)]="message">
+      <div class="input-group-append" (click)="sendMessage()">
+          <span class="input-group-text" id="basic-addon2">
+            <img class="img-send" src="../../../assets/chat/send.svg" alt="send message">
+          </span>
+        </div>
+      </form>
+  </div>

@@ -1,7 +1,7 @@
-<nav class="navbar bg-body-tertiary border-bottom border-body " data-bs-theme="dark">
+<nav class="navbar sticky d-block bg-body-tertiary border-bottom border-body " data-bs-theme="dark">
     <div class="container-fluid">
         <div>
-            <img class="px-3" src="../../../assets/icons/ghost.png" alt="">
+            <img [routerLink]="['/home']" class="px-3" src="../../../assets/icons/ghost.png" alt="">
             <a class="navbar-brand">{{this.authenticator.currentUser()?.email}}</a>
         </div>
         <h1 class="navbar-brand fs-1">Bienvenido {{this.authenticator.currentUser()?.nombrecompleto}} - Sala de Juegos!</h1>

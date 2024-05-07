@@ -1,7 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile, user, User, authState } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
-import { UserInterface } from '../models/user';
+import { UserModel } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class AuthService {
   user$ = user(this.auth);
   userState$ = authState(this.auth);
 
-  currentUser = signal<UserInterface | null | undefined>(undefined)
+  currentUser = signal<UserModel | null | undefined>(undefined)
   
   async registerUser(email: string, username: string, password: string){
     await createUserWithEmailAndPassword(this.auth, email, password)

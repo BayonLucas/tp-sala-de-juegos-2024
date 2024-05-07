@@ -1,0 +1,110 @@
+.cardContainer{
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+  .card-header{
+    background-color: #7c1ca4;
+    color: white;
+    font-weight: 700;
+  }
+  .card-body{
+    padding: 0.5rem;
+    background-image: url(".././../../assets/chat/bk-chat.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-bottom: 22px;
+  }
+  .card-footer{
+    position: absolute;
+    bottom: 0rem;
+    background-color: white;
+    border-radius: 0px 0px 3px 3px;
+  }
+  .input-group-append{
+    cursor: pointer;
+  }
+  .input-group-append:hover{
+    opacity: 0.5;
+  }
+  .img-send:active{
+    transform: scale(0.9);
+  }
+  p{
+    color: azure;
+  }
+  .send{
+    display: block;
+    float: right;
+    background-color: teal;
+    color: white;
+    min-width: 50.01%;
+    border-radius:10px;
+    text-align: left;
+  }
+  .received{
+    display: block;
+    float: left;
+    background-color: #6b59ac;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+  }
+  .received  .user-name{
+    color: #22151d;
+  }
+  .container-messages{
+    overflow: scroll;
+    padding: 0.3rem;
+  }
+  .container-messages::--webkit-scrollbar{
+    display: none;
+  }
+  .chat-icon-container{
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: linear-gradient(to right, #e44491, #7c1ca4);
+    background-color: #7c1ca4;
+    border-radius: 100%;
+    box-shadow: 0 0 10px 2px #6e3a64;
+  }
+  .icon-button{
+    width: 40px;
+    height: 40px;
+  }
+  .img-send{
+    width: 22px;
+    height: 22px;
+  }
+  .user-name{
+    font-size: 10px;
+    text-align: left;
+    color: #b32b30;
+    font-weight: 800;
+    margin: 0px;
+  }
+  .text{
+    font-size: 12px;
+    margin: 0px;
+  }
+  .user-date{
+    font-size: 9px;
+    text-align: right;
+    margin: 0px;
+  }
+  .btn-close{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }

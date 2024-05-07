@@ -77,8 +77,10 @@ export class SingupComponent implements OnInit {
       password: ['', [
         Validators.required,
         Validators.minLength(8),
+        Validators.maxLength(15),
         // Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
-        Validators.pattern("^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!-_])[A-Za-z\d!-_]{8,}$")
+        // Validators.pattern("^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!-_])[A-Za-z\d!-_]{8,}$")
+        // Validators.pattern("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])$/gm")
       ]]  
     });
   }
@@ -95,9 +97,19 @@ export class SingupComponent implements OnInit {
           // Navega a la página de inicio después de registrarse con éxito
           this.router.navigate(['/home']);
         })
-        .catch(error => {
+        .catch(e => {
           // Muestra el mensaje de error si el registro falla
-          this.errorMessage = error.message;
+          switch (e.code) {
+            case "auth/invalid-email":
+              this.errorMessage = "Email invalido";
+              break;
+            case "auth/email-already-in-use":
+              this.errorMessage = "Email ya en uso";
+              break;
+            default:
+              this.errorMessage = e.code
+              break;
+          }
         });
     }
   }

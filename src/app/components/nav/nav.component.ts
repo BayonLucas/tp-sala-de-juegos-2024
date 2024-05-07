@@ -25,7 +25,7 @@ export class NavComponent implements OnInit{
         this.authenticator.currentUser.set({
           email: user.email!,
           nombrecompleto: user.displayName!,
-          contraseña: ""
+          // contraseña: ""
         });
       }
       else{
