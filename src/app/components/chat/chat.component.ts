@@ -42,7 +42,7 @@ export class ChatComponent implements OnInit {
             this.messages = messages;
             setTimeout(() => {
               this.scrollToBottom();
-            }, 10);
+            }, 5);
           },
           (error) => {
             console.error('Error obteniendo documentos: ', error);

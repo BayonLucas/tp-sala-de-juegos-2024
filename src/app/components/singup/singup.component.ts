@@ -78,9 +78,7 @@ export class SingupComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(15),
-        // Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
-        // Validators.pattern("^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!-_])[A-Za-z\d!-_]{8,}$")
-        // Validators.pattern("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])$/gm")
+        Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]+$")
       ]]  
     });
   }

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { CollectionReference, Firestore, collection, addDoc, collectionData, query, collectionGroup, orderBy, getDoc, getDocs } from '@angular/fire/firestore';
-import { LogsInterface } from '../models/logs';
+import { LogsModel } from '../models/logs';
 import { MensajeModel } from '../models/mensaje';
 import { Observable, from} from 'rxjs';
 
@@ -20,7 +20,7 @@ export class StoreService {
 
   guardarLog(email : string){
     if(email){
-      let log = <LogsInterface>{
+      let log = <LogsModel>{
         email: email,
         date: new Date()
       }

@@ -103,7 +103,7 @@
               Contraseña debe tener maximo 15 caracteres.
             </div>
             <div *ngIf="form.get('password')?.hasError('pattern')">
-              Contraseña debe contener al menos una letra mayúscula, una letra minúscula, un dígito y puede contener algún caracter especial.
+              Contraseña debe contener al menos una letra mayúscula, una letra minúscula y un dígito. No puede contener espacios ni caracteres especiales.
             </div>
           </div>
         </div>

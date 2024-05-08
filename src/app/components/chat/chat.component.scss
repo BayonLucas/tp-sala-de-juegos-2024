@@ -1,14 +1,14 @@
 .cardContainer{
-    width: 400px;
-    height: 500px;
+    width: 450px;
+    height: 650px;
     position: fixed;
     right: 0.5rem;
     bottom: 0.5rem;
   }
   .card-header{
-    background-color: #7c1ca4;
-    color: white;
-    font-weight: 700;
+    background-color: #868686;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
   }
   .card-body{
     padding: 0.5rem;
@@ -21,8 +21,16 @@
   .card-footer{
     position: absolute;
     bottom: 0rem;
-    background-color: white;
-    border-radius: 0px 0px 3px 3px;
+    background-color: rgb(101, 101, 101);
+    border-radius: 5px;
+    input{
+      border-radius: 50px!important;
+
+    }
+    span{
+      border-radius: 50px;
+      margin-left: 5px;
+    }
   }
   .input-group-append{
     cursor: pointer;
@@ -37,22 +45,27 @@
     color: azure;
   }
   .send{
-    display: block;
+    display: grid;
+    grid-column: auto;
+    grid-gap: 0;
     float: right;
-    background-color: teal;
+    background: transparent;
+    background-color: rgba(44, 65, 223, 0.8);  
     color: white;
     min-width: 50.01%;
     border-radius:10px;
     text-align: left;
   }
   .received{
-    display: block;
+    display: grid;
     float: left;
-    background-color: #6b59ac;
+    background: transparent;
+    background-color: rgba(154, 62, 230, 0.8); 
     color: white;
     min-width: 50.01%;
     border-radius: 10px;
     text-align: left;
+    
   }
   .received  .user-name{
     color: #22151d;
@@ -61,7 +74,7 @@
     overflow: scroll;
     padding: 0.3rem;
   }
-  .container-messages::--webkit-scrollbar{
+  .container-messages:state(webkit-scrollbar){
     display: none;
   }
   .chat-icon-container{
@@ -71,8 +84,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     cursor: pointer;
     background: linear-gradient(to right, #e44491, #7c1ca4);
     background-color: #7c1ca4;
@@ -80,18 +93,18 @@
     box-shadow: 0 0 10px 2px #6e3a64;
   }
   .icon-button{
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
   .img-send{
     width: 22px;
     height: 22px;
   }
   .user-name{
-    font-size: 10px;
+    font-size: 13px;
     text-align: left;
-    color: #b32b30;
-    font-weight: 800;
+    color: #ffffff;
+    font-weight: 1000;
     margin: 0px;
   }
   .text{
@@ -107,4 +120,5 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+    color: aliceblue;
   }

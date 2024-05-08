@@ -1,4 +1,4 @@
-export interface LogsInterface {
+export interface LogsModel {
     email: string,
     date: Date
 }
