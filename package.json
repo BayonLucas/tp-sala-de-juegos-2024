@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build && firebase deploy --only hosting && start microsoft-edge:https://tp-sala-de-juegos-2024.web.app --inprivate"
+    "deploy": "ng build && firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {

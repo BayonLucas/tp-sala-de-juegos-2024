@@ -33,6 +33,7 @@ export class StoreService {
         });
     }
   }
+  
   guardarMensajes(message: MensajeModel){
     if(message){
       addDoc(this.msjColection, message)

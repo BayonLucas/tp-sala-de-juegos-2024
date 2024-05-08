@@ -42,7 +42,7 @@ export class ChatComponent implements OnInit {
             this.messages = messages;
             setTimeout(() => {
               this.scrollToBottom();
-            }, 5);
+            }, 10);
           },
           (error) => {
             console.error('Error obteniendo documentos: ', error);
@@ -52,6 +52,7 @@ export class ChatComponent implements OnInit {
   } 
   
     enviarMensajes(): void {
+      debugger;
       const now = new Date();
       const messageNew: MensajeModel = {
         uid: this.userIsLogged.uid,
