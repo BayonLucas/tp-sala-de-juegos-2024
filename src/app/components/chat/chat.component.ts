@@ -28,8 +28,6 @@ export class ChatComponent implements OnInit {
 
   @ViewChild('container-messages') private messageContainer!: ElementRef;
   
-  
-
   ngOnInit(): void {
     this.auth.user$.subscribe(
       user => {
@@ -52,22 +50,24 @@ export class ChatComponent implements OnInit {
   } 
   
     enviarMensajes(): void {
-      debugger;
-      const now = new Date();
-      const messageNew: MensajeModel = {
-        uid: this.userIsLogged.uid,
-        user: this.userName,
-        text: this.message,
-        date: now.toLocaleString(),
-      };
-    
-      this.store.guardarMensajes(messageNew);
-      this.messages.push(messageNew);
-    
-      setTimeout(() => {
-        this.message = "";
-        this.scrollToBottom();
-      }, 10);
+      if(this.message != ""){
+        const now = new Date();
+        const messageNew: MensajeModel = {
+          uid: this.userIsLogged.uid,
+          user: this.userName,
+          text: this.message,
+          date: now.toLocaleString(),
+        };
+      
+        this.store.guardarMensajes(messageNew);
+        this.messages.push(messageNew);
+      
+        setTimeout(() => {
+          this.message = "";
+          this.scrollToBottom();
+        }, 10);
+
+      }
     }
     
     determineMessageClass(message: MensajeModel): string {

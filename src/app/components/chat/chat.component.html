@@ -20,7 +20,7 @@
     <span id="final"></span>
   </div>
   <form class="card-footer text-muted input-group" (ngSubmit)="enviarMensajes()">
-    <input type="text" class="form-control" placeholder="Ingresa tu mensaje" [(ngModel)]="message">
+    <input type="text" class="form-control" name="asd" placeholder="Ingresa tu mensaje" [(ngModel)]="this.message">
     <div class="input-group-append" (click)="enviarMensajes()">
       <span class="input-group-text" id="basic-addon2">
         <img class="img-send" src="../../../assets/chat/send.svg" alt="send message">
