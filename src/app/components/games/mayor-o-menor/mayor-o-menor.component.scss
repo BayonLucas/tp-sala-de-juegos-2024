@@ -1,0 +1,93 @@
+.game{
+    margin-top: 150px;
+    width: 1350px;
+    height: 850px;
+    background-image: url("../../../../assets/img_juegos/Mayor_o_menor.jpeg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.8)!important;
+}
+.cabecera{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.8)!important;
+    color: white;
+    button{
+        width: 100px;
+    }
+    span{
+        font-size: 18px;
+    }
+}
+.start{
+    font-size: 70px!important;
+    font-weight: bold!important;
+}
+.palabra{
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    p{
+        color: azure;
+        font-size: 70px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.parte_superior{
+    padding-left: 40px;
+    // padding-right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    img{
+        border-radius: 20px;
+    }
+} 
+
+
+.keyboard{
+    padding-left: 40px;
+
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 30px;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+.fila{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    button{
+        border-radius: 0 20px 0 20px;
+        border-width: 4px;
+        width: 120px;
+        height: 80px;
+        font-size: 25px;
+        font-weight: bolder;
+    }
+}
+
+.spinner-container{
+    display: grid;
+    justify-items: center;
+    .span{
+        font-size: 20px;
+        font-weight: 50px;    
+        color: aliceblue;
+    }
+}
+.spinner{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}

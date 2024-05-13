@@ -8,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './mayor-o-menor.component.scss'
 })
 export class MayorOMenorComponent {
+  puntaje: number = 0;
+  puntajeMaximo: number = 0;
+  puntajeUltimo: number = 0;
+  intento: number = 0;
+
+  imgActual: string = "";
+  msjMook: string = "";
+
+  loading: boolean = false;
+  running: boolean = false;
 
 }

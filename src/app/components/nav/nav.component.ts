@@ -23,6 +23,7 @@ export class NavComponent implements OnInit{
     this.authenticator.user$.subscribe( user => {
       if(user){
         this.authenticator.currentUser.set({
+          uid: user.uid,
           email: user.email!,
           nombrecompleto: user.displayName!,
           // contraseña: ""

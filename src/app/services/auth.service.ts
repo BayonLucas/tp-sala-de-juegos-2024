@@ -1,4 +1,4 @@
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable, inject, signal, ɵgetUnknownPropertyStrictMode } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile, user, User, authState } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
 import { UserModel } from '../models/user';
@@ -10,9 +10,25 @@ export class AuthService {
   private auth = inject(Auth);
   user$ = user(this.auth);
   userState$ = authState(this.auth);
-
+  private user!: UserModel | null;
   currentUser = signal<UserModel | null | undefined>(undefined)
   
+  constructor() {
+    this.userState$.subscribe(authState => {
+      if (authState) {
+        this.user = <UserModel>{
+          uid: authState?.uid,
+          nombrecompleto: authState.displayName,
+          email: authState.email
+        };
+      } 
+      else {
+        this.user = null;
+      }
+    });
+  }
+
+
   async registerUser(email: string, username: string, password: string){
     await createUserWithEmailAndPassword(this.auth, email, password)
       .then( response => 
@@ -31,13 +47,10 @@ export class AuthService {
   }
 
   async singOutUser(){
-    return await signOut(this.auth);
+    return await signOut(this.auth)
+      .then( res => {
+        localStorage.removeItem("userCredential");
+      });
   }
-
-  getUserLogged() {
-    return this.userState$;
-  }
-
-
 
 }

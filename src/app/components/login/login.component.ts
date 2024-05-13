@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators, FormGroup } from '@angula
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { StoreService } from '../../services/store.service';
+import { UserModel } from '../../models/user';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,12 @@ export class LoginComponent implements OnInit{
     
     this.authF.loginUser(data.email, data.password)
     .then(res => {
-      console.log(res.user.email);
+      let userCredential: UserModel =  <UserModel>{
+        uid: res.user.uid,
+        email: res.user.email,
+        nombrecompleto: res.user.displayName
+      }
+      localStorage.setItem("userCredential", JSON.stringify(userCredential))
       this.fStore.guardarLog(res.user.email!);
       this.router.navigateByUrl('/home');
     }).catch(e => {

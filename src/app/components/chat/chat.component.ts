@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { StoreService } from '../../services/store.service';
-import { Observable, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MensajeModel } from '../../models/mensaje';
 import { FormsModule } from '@angular/forms';
 
@@ -46,17 +46,18 @@ export class ChatComponent implements OnInit {
             console.error('Error obteniendo documentos: ', error);
           }
         );
-    });
+    }); 
   } 
   
     enviarMensajes(): void {
       if(this.message != ""){
-        const now = new Date();
+        // const now = new Date();
         const messageNew: MensajeModel = {
           uid: this.userIsLogged.uid,
           user: this.userName,
           text: this.message,
-          date: now.toLocaleString(),
+          // date: now.toLocaleString(),
+          date: new Date(),
         };
       
         this.store.guardarMensajes(messageNew);

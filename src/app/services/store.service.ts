@@ -35,17 +35,19 @@ export class StoreService {
   }
   
   guardarMensajes(message: MensajeModel){
+    debugger;
     if(message){
       addDoc(this.msjColection, message)
-        .then((res) => {
+      .then((res) => {
         console.log(res);
-        }).catch( (e) =>{
-          console.log(e);
-        });
+      }).catch( (e) =>{
+        console.log(e);
+      });
     }
   }
-
+  
   cargarMensajes(): Observable<MensajeModel[]> {
+    debugger;
     const qry = query(this.msjColection, orderBy('date', 'asc'));
     return collectionData(qry) as Observable<MensajeModel[]>;
   }

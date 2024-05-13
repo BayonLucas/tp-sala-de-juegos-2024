@@ -1,18 +1,81 @@
-<div class="container">
-    <div class="row">
-        <h1>¡El ahorcado!</h1>
-    </div>
+<div class="container-fluid d-flex justify-content-center align-items-center vh-90">
     <div class="row game">
-        <div class="row parte_superior">
-            <div class="col-ms-4">
-                <img src="" alt="">
+        <div class="row cabecera d-flex justify-content-between align-items-center">
+                <div class="col-md-4 d-flex justify-content-start">
+                    <button id="next" disabled class="btn btn-outline-light" (click)="next()">Next (-1 )</button>
+                    <button id="Escapar" disabled class="btn btn-outline-light" (click)="salir('Guardar y salir...')">Escapar</button>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <h1 class="text-center">¡El ahorcado!</h1>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end">
+                    <div class="d-grid">
+                        <span class="text-end">Mejor puntaje: {{puntajeMaximo}} pts.</span>
+                        <span class="text-end">Último puntaje: {{puntajeUltimo}} pts.</span>
+                        <span class="text-end">Puntaje actual: {{puntaje}} pts.</span>
+                    </div>
+                </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="row parte_superior">
+                <div class="col-md-3">
+                    <img [src]="imagenActual" alt="Ahorcado">
+                </div>
+                <div class="col-md-9 d-flex justify-content-center align-items-center" >
+                    @if(cargando){
+                        <div class="spinner-container">
+                            <img class="spinner" src="../../../../assets/spinnerPacMan.gif" alt="">
+                            <span class="span">{{msjMook}}</span>
+                        </div>
+                    }
+                    @else {
+                        @if(!jugando){
+                            <button class="btn btn-lg btn-outline-light w-50 h-50 start" (click)="empezarJuego()">Start_</button>
+                        }
+                        @else{
+                            <div class="palabra" *ngFor="let caracter of palabraDescubierta; let i = index">
+                                <p>{{ caracter }}</p>
+                            </div>
+                        }
+                    }
+                </div>
             </div>
-            <div class="col-ms-8">
-
+            <div id="keyboard" class="row d-flex justify-content-center keyboard" >
+                <div class="fila aling-items-start">
+                        <button class="btn btn-outline-info" id="Q" (click)="presionarTecla('Q')">Q</button>
+                        <button class="btn btn-outline-info" id="W" (click)="presionarTecla('W')">W</button>
+                        <button class="btn btn-outline-info" id="E" (click)="presionarTecla('E')">E</button>
+                        <button class="btn btn-outline-info" id="R" (click)="presionarTecla('R')">R</button>
+                        <button class="btn btn-outline-info" id="T" (click)="presionarTecla('T')">T</button>
+                        <button class="btn btn-outline-info" id="Y" (click)="presionarTecla('Y')">Y</button>
+                        <button class="btn btn-outline-info" id="U" (click)="presionarTecla('U')">U</button>
+                        <button class="btn btn-outline-info" id="I" (click)="presionarTecla('I')">I</button>
+                        <button class="btn btn-outline-info" id="O" (click)="presionarTecla('O')">O</button>
+                        <button class="btn btn-outline-info" id="P" (click)="presionarTecla('P')">P</button>
+                </div>
+                <div class="fila aling-items-end">
+                        <button class="btn btn-outline-info" id="A" (click)="presionarTecla('A')">A</button>
+                        <button class="btn btn-outline-info" id="S" (click)="presionarTecla('S')">S</button>
+                        <button class="btn btn-outline-info" id="D" (click)="presionarTecla('D')">D</button>
+                        <button class="btn btn-outline-info" id="F" (click)="presionarTecla('F')">F</button>
+                        <button class="btn btn-outline-info" id="G" (click)="presionarTecla('G')">G</button>
+                        <button class="btn btn-outline-info" id="H" (click)="presionarTecla('H')">H</button>
+                        <button class="btn btn-outline-info" id="J" (click)="presionarTecla('J')">J</button>
+                        <button class="btn btn-outline-info" id="K" (click)="presionarTecla('K')">K</button>
+                        <button class="btn btn-outline-info" id="L" (click)="presionarTecla('L')">L</button>
+                        <button class="btn btn-outline-info" id="Ñ" (click)="presionarTecla('Ñ')">Ñ</button>
+                </div>
+                <div class="fila aling-items-start">
+                        <button class="btn btn-outline-info" id="Z" (click)="presionarTecla('Z')">Z</button>
+                        <button class="btn btn-outline-info" id="X" (click)="presionarTecla('X')">X</button>
+                        <button class="btn btn-outline-info" id="C" (click)="presionarTecla('C')">C</button>
+                        <button class="btn btn-outline-info" id="V" (click)="presionarTecla('V')">V</button>
+                        <button class="btn btn-outline-info" id="B" (click)="presionarTecla('B')">B</button>
+                        <button class="btn btn-outline-info" id="N" (click)="presionarTecla('N')">N</button>
+                        <button class="btn btn-outline-info" id="M" (click)="presionarTecla('M')">M</button>
+                </div>
             </div>
         </div>
-        <div class="row keyboard">
-
-        </div>
+        
     </div>
 </div>
