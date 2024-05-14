@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'

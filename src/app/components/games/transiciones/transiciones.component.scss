@@ -1,0 +1,113 @@
+.start{
+    font-size: 70px!important;
+    font-weight: bold!important;
+}
+
+.spinner-container{
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    .span{
+        font-size: 30px;
+        font-weight: 50px;    
+        color: aliceblue;
+    }
+}
+
+.spinner{
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.game{
+    margin-top: 150px;
+    width: 1350px;
+    height: 850px;
+    padding: 25px;
+    background-image: url("../../../../assets/img_juegos/Mayor_o_menor.jpeg");
+    background-position: center;
+    border-radius: 30px;
+}
+
+.cabecera{
+    padding: 10px;
+    margin: 10px;
+    height: 100px;
+    width: 99%;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.8)!important;
+    color: white;
+    button{
+        width: 100px;
+    }
+    span{
+        font-size: 18px;
+    }
+}
+
+.rey{
+    width: 400px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+}
+
+.pink{
+    background-color: transparent!important;
+    border-color: rgb(242, 1, 255);
+    color: rgb(242, 1, 255);
+}
+.pink:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 255)!important;
+}
+
+.violet{
+    background-color: transparent!important;
+    border-color: rgb(136, 0, 255);
+    color:  rgb(136, 0, 255);
+}
+.violet:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(136, 0, 255)!important;
+}
+
+
+
+.gContainer{
+    background-color: rgba(0, 0, 0, 0.8)!important;
+    border-radius: 30px;
+    width: 99%;
+    height: 85%;
+    padding: 10px;
+    margin: 10px;
+    img{
+        border-radius: 20px;
+    }
+} 
+
+.gBody{
+    display: flex;
+    flex-direction: column;
+    
+    .row{
+        justify-content: space-around;
+        align-items: center;
+        height: 33%;
+
+        .btn {
+            margin: 10px;
+            width: 20%;
+            height: 70%;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .rey {
+            width: 50%;
+            height: 80%;
+            transition: background-color 0.5s ease;
+        }
+    }
+}

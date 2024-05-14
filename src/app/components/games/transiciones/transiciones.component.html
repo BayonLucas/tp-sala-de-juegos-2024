@@ -1,0 +1,56 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="row game">
+        <div class="row cabecera d-flex justify-content-between align-items-center">
+                <div class="col-md-4 d-flex justify-content-start">
+                    <button id="Escapar" class="btn btn-outline-light" [disabled]="!running" (click)="salir('Dale! Nos vemos! Te cuido el Score')">Salir</button>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <h1 class="text-center">¡Transiciones!</h1>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end">
+                    <div class="d-grid">
+                        <span class="text-end">Mejor puntaje: {{puntajeMaximo}} pts.</span>
+                        <span class="text-end">Último puntaje: {{puntajeUltimo}} pts.</span>
+                        <span class="text-end">Puntaje actual: {{puntaje}} pts.</span>
+                    </div>
+                </div>
+        </div>
+        <div class="row d-flex justify-content-center gContainer">
+            @if(loading){
+                <div class="spinner-container">
+                    <img class="spinner" src="../../../../assets/transition/Rainbow.gif" alt="">
+                    <span class="span">{{msjMook}}</span>
+                </div>
+            }
+            @else {
+                @if(!running){
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn btn-lg btn-outline-light w-50 h-50 start" (click)="start()">Start_</button>
+                    </div>
+                }
+                @else{
+                    <div class="gBody">
+                        <div class="row">
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('red')" class="btn btn-outline-danger">ROJO</button>
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('blue')" class="btn btn-outline-primary">AZUL</button>
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('green')" class="btn btn-outline-success">VERDE</button>
+                            
+                        </div>
+                        <div class="row">
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('#ff00ff')" class="btn btn-outline-secondary pink">ROSA</button>
+                            <div [style.background-color]="currentColor" class="color-box rey"></div>
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('#ffc107')" class="btn btn-outline-warning">NARANJA</button>
+
+                        </div>
+                        <div class="row">
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('#0dcaf0')" class="btn btn-outline-info">CYAN</button>
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('white')" class="btn btn-outline-light">BLANCO</button>
+                            <button [disabled]="this.showSecuense" (click)="elegirColor('#8800FF')" class="btn btn-outline-secondary violet">VIOLETA</button>
+
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
