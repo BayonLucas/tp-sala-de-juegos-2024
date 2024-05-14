@@ -5,7 +5,7 @@
                     <button id="Escapar" class="btn btn-outline-light" [disabled]="!running" (click)="salir('Dale! Nos vemos! Te cuido el Score')">Salir</button>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center">
-                    <h1 class="text-center">¡Transiciones!</h1>
+                    <h1 class="text-center">¡Sequence!</h1>
                 </div>
                 <div class="col-md-4 d-flex justify-content-end">
                     <div class="d-grid">
@@ -31,21 +31,21 @@
                 @else{
                     <div class="gBody">
                         <div class="row">
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('red')" class="btn btn-outline-danger">ROJO</button>
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('blue')" class="btn btn-outline-primary">AZUL</button>
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('green')" class="btn btn-outline-success">VERDE</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('red')" class="btn btn-outline-danger">ROJO</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('blue')" class="btn btn-outline-primary">AZUL</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('green')" class="btn btn-outline-success">VERDE</button>
                             
                         </div>
                         <div class="row">
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('#ff00ff')" class="btn btn-outline-secondary pink">ROSA</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('#ff00ff')" class="btn btn-outline-secondary pink">ROSA</button>
                             <div [style.background-color]="currentColor" class="color-box rey"></div>
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('#ffc107')" class="btn btn-outline-warning">NARANJA</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('#ffc107')" class="btn btn-outline-warning">NARANJA</button>
 
                         </div>
                         <div class="row">
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('#0dcaf0')" class="btn btn-outline-info">CYAN</button>
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('white')" class="btn btn-outline-light">BLANCO</button>
-                            <button [disabled]="this.showSecuense" (click)="elegirColor('#8800FF')" class="btn btn-outline-secondary violet">VIOLETA</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('#0dcaf0')" class="btn btn-outline-info">CYAN</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('white')" class="btn btn-outline-light">BLANCO</button>
+                            <button [disabled]="this.showSequence" (click)="elegirColor('#8800FF')" class="btn btn-outline-secondary violet">VIOLETA</button>
 
                         </div>
                     </div>

@@ -26,6 +26,6 @@ export const routes: Routes = [
     { path: 'ahorcado', loadComponent: () => import('./components/games/el-ahorcado/el-ahorcado.component').then(mod => mod.ElhorcadoComponent)},
     { path: 'mayor-o-menor', loadComponent: () => import('./components/games/mayor-o-menor/mayor-o-menor.component').then(mod => mod.MayorOMenorComponent)},
     { path: 'preguntados', loadComponent: () => import('./components/games/preguntados/preguntados.component').then(mod => mod.PreguntadosComponent)},
-    { path: 'secuencia', loadComponent: () => import('./components/games/transiciones/transiciones.component').then(mod => mod.TransicionesComponent)},
+    { path: 'sequence', loadComponent: () => import('./components/games/transiciones/transiciones.component').then(mod => mod.TransicionesComponent)},
     { path: '**', loadComponent: () => import('./components/error-found/error-found.component').then(mod => mod.ErrorFoundComponent)},
 ];

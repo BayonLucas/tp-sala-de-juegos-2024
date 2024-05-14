@@ -22,7 +22,7 @@ export class TransicionesComponent implements OnInit{
   
   loading: boolean = false;
   running: boolean = false;
-  showSecuense: boolean = false;
+  showSequence: boolean = false;
   result: any = -1;
 
   colors = ['red', 'blue', 'green', '#ffc107', '#0dcaf0', 'white', '#8800FF', '#ff00ff'];
@@ -45,6 +45,7 @@ export class TransicionesComponent implements OnInit{
   }
 
   obtenerSecuencia(cant: number){
+    this.currentSecuense = [];
     while(this.currentSecuense.length != cant){
       this.currentSecuense.push(this.randomColor());
     }
@@ -52,7 +53,7 @@ export class TransicionesComponent implements OnInit{
 
   mostrarSecuenciaAReplicar(){
     if(this.currentSecuense.length != 0){
-      this.showSecuense = true;
+      this.showSequence = true;
       for(let i = 0; i < this.currentSecuense.length +1; i++ ){
 
         ((i) => {
@@ -66,7 +67,7 @@ export class TransicionesComponent implements OnInit{
         })(i);
       }
       setTimeout(() => {
-        this.showSecuense = false;
+        this.showSequence = false;
       }, 2000 * this.currentSecuense.length);
     }
   }
@@ -82,6 +83,7 @@ export class TransicionesComponent implements OnInit{
 
   elegirColor(color: string){
     if(this.respuestaSecuencia.length < this.currentSecuense.length){
+      this.currentColor = color;
       this.respuestaSecuencia.push(color);
       console.log(this.respuestaSecuencia);
     }
@@ -95,8 +97,10 @@ export class TransicionesComponent implements OnInit{
         this.comenzar();
       }
       else{
-        this.puntaje -= 10;   
+        this.puntaje -= 15;   
         this.respuestaSecuencia = [];
+        this.comenzar();
+
       }
     }
   }
@@ -105,7 +109,7 @@ export class TransicionesComponent implements OnInit{
     this.msjMook = mensaje;
     this.loading = true;
     setTimeout( () => {
-      this.scoreService.guardarScore("secuencia", this.puntaje);
+      this.scoreService.guardarScore("sequence", this.puntaje);
       this.loading = false;
       this.running = false;
       this.router.navigateByUrl("/home");
@@ -119,11 +123,11 @@ export class TransicionesComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.scoreService.obtenerUltimoScore("secuencia")?.subscribe( (res) => {
+    this.scoreService.obtenerUltimoScore("sequence")?.subscribe( (res) => {
       this.puntajeUltimo = res.puntaje ?? 0;
     });
 
-    this.scoreService.obtenerMejorScore("secuencia")?.subscribe( (res) => {
+    this.scoreService.obtenerMejorScore("sequence")?.subscribe( (res) => {
       this.puntajeMaximo = res.puntaje ?? 0;
     });
   }
