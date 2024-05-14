@@ -24,5 +24,6 @@ export const routes: Routes = [
     { path: 'quien-soy', loadComponent: () => import('./components/quien-soy/quien-soy.component').then(mod => mod.QuienSoyComponent)},
     { path: 'reset-password', loadComponent: () => import('./components/reset-password/reset-password.component').then(mod => mod.ResetPasswordComponent)},
     { path: 'ahorcado', loadComponent: () => import('./components/games/el-ahorcado/el-ahorcado.component').then(mod => mod.ElhorcadoComponent)},
+    { path: 'mayor-o-menor', loadComponent: () => import('./components/games/mayor-o-menor/mayor-o-menor.component').then(mod => mod.MayorOMenorComponent)},
     { path: '**', loadComponent: () => import('./components/error-found/error-found.component').then(mod => mod.ErrorFoundComponent)},
 ];

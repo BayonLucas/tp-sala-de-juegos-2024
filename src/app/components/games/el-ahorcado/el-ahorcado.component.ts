@@ -178,6 +178,10 @@ export class ElhorcadoComponent implements OnInit{
     }, 2000);
   }
 
+
+
+
+  
   ngOnInit(): void {
     this.habilitarTeclas(false);
     this.msjMook = "Estamos cargando tu proxima palabra";
