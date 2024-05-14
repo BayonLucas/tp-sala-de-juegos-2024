@@ -1,1 +1,51 @@
-<p>preguntados works!</p>
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="row game">
+        <div class="row cabecera d-flex justify-content-between align-items-center">
+                <div class="col-md-4 d-flex justify-content-start">
+                    <button id="Escapar" class="btn btn-outline-light" [disabled]="!running" (click)="salir('Dale! Nos vemos! Te cuido el Score')">Salir</button>
+                </div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <h1 class="text-center">PreguntaDev!</h1>
+                </div>
+                <div class="col-md-4 d-flex justify-content-end">
+                    <div class="d-grid">
+                        <span class="text-end">Mejor puntaje: {{puntajeMaximo}} pts.</span>
+                        <span class="text-end">Último puntaje: {{puntajeUltimo}} pts.</span>
+                        <span class="text-end">Puntaje actual: {{puntaje}} pts.</span>
+                    </div>
+                </div>
+        </div>
+        <div class="row d-flex justify-content-center gContainer">
+            @if(loading){
+                <div class="spinner-container">
+                    <img class="spinner" src="../../../../assets/transition/Rainbow.gif" alt="">
+                    <span class="span">{{msjMook}}</span>
+                </div>
+            }
+            @else {
+                @if(!running){
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn btn-lg btn-outline-light w-50 h-50 start" (click)="start()">Start_</button>
+                    </div>
+                }
+                @else{
+                    <div class="gBody">
+                        <div class="col-md-4">
+                            <img src="{{imgCategory}}" alt="">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <h2>{{data.question}}</h2>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-outline-secondary">"{{data.answers['answer_a']}}"</button>
+                                <button class="btn btn-outline-secondary">"{{data.answers['answer_b']}}"</button>
+                                <button class="btn btn-outline-secondary">"{{data.answers['answer_c']}}"</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
